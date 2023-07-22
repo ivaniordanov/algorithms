@@ -1,4 +1,4 @@
-import memoize
+from memoize import memoize
 
 def identity(x):
     return x
