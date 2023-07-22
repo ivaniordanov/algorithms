@@ -1,4 +1,3 @@
-
 def memoize(key_transform):
     def decorator(function):
         def wrapper(*args, **kwargs):
@@ -10,10 +9,3 @@ def memoize(key_transform):
             return result
         return wrapper
     return decorator
-
-def identity(x):
-    return x
-
-@memoize(identity)
-def fibonacci(n):
-    return 1 if n < 2 else fibonacci(n-1) + fibonacci(n-2)
