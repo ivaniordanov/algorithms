@@ -10,7 +10,7 @@ def split(sequence):
 def power_range(constant, n):
     return (constant**i for i in range(n))
 
-def unity_circle(n, coefficient):
+def unit_circle(n, coefficient):
     return power_range(exponent(complex(0, coefficient * math.pi / (n * abs(coefficient)))), n)
 
 def array_pad(arr, n, value=0):
@@ -19,7 +19,7 @@ def array_pad(arr, n, value=0):
 def combine(A, B, coefficient):
   n = len(A)
   result = [0] * n * 2
-  for i, (a,b, omega) in enumerate(zip(A, B, unity_circle(n, coefficient))):
+  for i, (a,b, omega) in enumerate(zip(A, B, unit_circle(n, coefficient))):
     result[i], result[i + n] = a + (omega * b), a - (omega * b)
   return result
 
